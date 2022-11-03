@@ -12,6 +12,7 @@ import {Link} from 'react-router-dom'
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import UpcomingMoviesPage from './pages/upcomingMoviesPage'
+import WatchListMoviesPage from "./pages/watchListPage";
 
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -39,6 +40,8 @@ const App = () => {
             <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
 
             <Route exact path="/movies/upcoming" element={<UpcomingMoviesPage />} />
+            <Route exact path="/movies/watchList" element={<WatchListMoviesPage />} />
+
 
             <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
 
