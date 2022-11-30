@@ -24,17 +24,17 @@ function ActorListPageTemplate({ actors, title, action }) {
 
   return (
     <Grid container sx={{ padding: '20px' }}>
-      <Grid item xs={12}>
+      <Grid item xs={10}>
         <Header title={title} />
       </Grid>
       <Grid item container spacing={5}>
-        <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
-          {/* <FilterCard
+        {/* <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
+          <FilterCard
             onUserInput={handleChange}
             titleFilter={nameFilter}
             genreFilter={genreFilter}
-          /> */}
-        </Grid>
+          />
+        </Grid> */}
         <ActorList action={action} actors={displayedActors}></ActorList>
       </Grid>
     </Grid>

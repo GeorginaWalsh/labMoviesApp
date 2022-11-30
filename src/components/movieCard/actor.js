@@ -7,6 +7,7 @@ import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+import MovieIcon from '@mui/icons-material/Movie';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
 
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
@@ -36,7 +37,7 @@ export default function ActorCard({ actor, action }) {
 //    };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 400 }}>
       <CardHeader
         // avatar={
         //   actor.favourite ? (
@@ -61,16 +62,17 @@ export default function ActorCard({ actor, action }) {
       />
       <CardContent>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={14}>
             <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              {actor.birthday}
+              <MovieIcon fontSize="small" />
+              {"Seen in \n'"}{actor.known_for[0].title ? actor.known_for[0].title : actor.known_for[0].name}
+              {"'"}
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={14}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {actor.popularity}{" "}
+              {" Popularity Rating: "} {actor.popularity}{" "}
             </Typography>
           </Grid>
         </Grid>
