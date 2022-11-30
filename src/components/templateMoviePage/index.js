@@ -1,17 +1,17 @@
 import React from "react";  // useState/useEffect redundant 
-import MovieHeader from "../headerMovie";
+import ActorHeader from "../headerMovie/actor";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { getMovieImages } from "../../api/tmdb-api";
+import { getActorImages } from "../../api/tmdb-api";
 
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
-const TemplateMoviePage = ({ movie, children }) => {
+const TemplateActorPage = ({ actor, children }) => {
   const { data , error, isLoading, isError } = useQuery(
-    ["images", { id: movie.id }],
-    getMovieImages
+    ["images", { id: actor.id }],
+    getActorImages
   );
 
   if (isLoading) {
@@ -25,7 +25,7 @@ const TemplateMoviePage = ({ movie, children }) => {
 
   return (
     <>
-      <MovieHeader movie={movie} />
+      <ActorHeader actor={actor} />
 
       <Grid container spacing={5} sx={{ padding: "15px" }}>
         <Grid item xs={3}>
@@ -40,7 +40,7 @@ const TemplateMoviePage = ({ movie, children }) => {
                     <ImageListItem key={image.file_path} cols={1}>
                     <img
                         src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
-                        alt={image.poster_path}
+                        alt={image.profile_path}
                     />
                     </ImageListItem>
                 ))}
@@ -56,4 +56,4 @@ const TemplateMoviePage = ({ movie, children }) => {
   );
 };
 
-export default TemplateMoviePage;
+export default TemplateActorPage;

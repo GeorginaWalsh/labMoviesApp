@@ -1,0 +1,40 @@
+import React from "react";
+import { getActors } from "../api/tmdb-api";
+//import PageTemplate from '../components/templateMovieListPage';
+import { useQuery } from 'react-query';
+import Spinner from '../components/spinner';
+
+import ActorListPageTemplate from "../components/templateMovieListPage/actor";
+
+import AddToWatchListIcon from "../components/cardIcons/addToWatchList";
+
+const ActorsPage = (props) => {
+
+  const {  data, error, isLoading, isError }  = useQuery('actors', getActors)
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>
+  }  
+  const actors = data;
+
+  // Redundant, but necessary to avoid app crashing.
+//   const watchList = movies.filter(m => m.watch)
+//   localStorage.setItem('watchList', JSON.stringify(watchList))
+//   const addToWatchList = (movieId) => true 
+
+  return (
+    <ActorListPageTemplate
+      title="Popular Actors"
+      actors={actors}
+    //   action={(movie) => {
+    //     return <AddToWatchListIcon movie={movie} />
+    //   }}
+    />
+);
+};
+
+export default ActorsPage;
