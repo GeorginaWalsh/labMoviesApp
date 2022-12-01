@@ -18,6 +18,8 @@ import ActorsPage from "./pages/actorsPage";
 import ActorDetailsPage from "./pages/actorDetailsPage";
 import FavouriteActorsPage from "./pages/favouriteActorsPage";
 
+import TvsPage from "./pages/tvsPage";
+
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -48,7 +50,9 @@ const App = () => {
 
             <Route exact path="/movies/actors" element={<ActorsPage />} />
             <Route path="/actors/:id" element={<ActorDetailsPage />} />
-            <Route path="/actors/favourites" element={<FavouriteActorsPage />} />
+            <Route path="/movies/actors/favourites" element={<FavouriteActorsPage />} />
+
+            <Route exact path="/movies/tvs" element={<TvsPage />} />
 
             <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
 

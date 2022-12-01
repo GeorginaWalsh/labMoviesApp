@@ -27,8 +27,8 @@ const FavouriteActorsPage = () => {
   }
 
   const actors = favouriteActorQueries.map((q) => {
-    //q.data.genre_ids = q.data.genres.map(g => g.id)
-    return q
+    q.data = q.data.results
+    return q.data
   });
 
   const toDo = () => true;
