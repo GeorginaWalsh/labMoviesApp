@@ -32,7 +32,7 @@ const TvHeader = (props) => {
           <HomeIcon color="primary" />
         </a>
         <br />
-        <span sx={{ fontSize: "1.5rem" }}>{`   "${tv.type}"`} </span>
+        <span sx={{ fontSize: "1.5rem" }}>{` Status:  "${tv.status}"`} </span>
       </Typography>
 
       <IconButton aria-label="go forward" onClick={() => navigate(+1) } >
