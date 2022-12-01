@@ -24,7 +24,7 @@ function ActorListPageTemplate({ actors, title, action }) {
 
   return (
     <Grid container sx={{ padding: '20px' }}>
-      <Grid item xs={10}>
+      <Grid item xs={12}>
         <Header title={title} />
       </Grid>
       <Grid item container spacing={5}>

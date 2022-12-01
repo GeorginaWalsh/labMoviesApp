@@ -25,10 +25,16 @@ const MoviesContextProvider = (props) => {
     setActorFavourites(newFavourites);
   };
 
-  // We will use this function in a later section
+
   const removeFromFavourites = (movie) => {
     setFavourites( favourites.filter(
       (mId) => mId !== movie.id
+    ) )
+  };
+
+  const removeFromActorFavourites = (actor) => {
+    setActorFavourites( actorFavourites.filter(
+      (mId) => mId !== actor.id
     ) )
   };
 
@@ -60,6 +66,7 @@ const MoviesContextProvider = (props) => {
         addToFavourites,
         addToActorFavourites,
         removeFromFavourites,
+        removeFromActorFavourites,
         addReview,
         addToWatchList,
         removeFromWatchList,

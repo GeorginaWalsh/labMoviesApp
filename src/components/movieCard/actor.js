@@ -8,11 +8,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import MovieIcon from '@mui/icons-material/Movie';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
-import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import IconButton from "@mui/material/IconButton";
+ import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
@@ -23,29 +22,29 @@ import { MoviesContext } from "../../contexts/moviesContext";
 
 
 export default function ActorCard({ actor, action }) {
-   //const { watchList, addToWatchList } = useContext(MoviesContext);
+    const { actorFavourites, addToActorFavourites } = useContext(MoviesContext);
  
-//    if (watchList.find((id) => id === movie.id)) {
-//      movie.favourite = true;
-//    } else {
-//      movie.favourite = false
-//    }
- 
-//    const handleAddToWatchList = (e) => {
-//      e.preventDefault();
-//      addToWatchList(movie);
-//    };
+    if (actorFavourites.find((id) => id === actor.id)) {
+      actor.actorFavourite = true;
+    } else {
+      actor.actorFavourite = false
+    }
+  
+    const handleAddToActorFavourite = (e) => {
+      e.preventDefault();
+      addToActorFavourites(actor);
+    };
 
   return (
     <Card sx={{ maxWidth: 400 }}>
       <CardHeader
-        // avatar={
-        //   actor.favourite ? (
-        //     <Avatar sx={{ backgroundColor: 'green' }}>
-        //       <PlaylistAddIcon />
-        //     </Avatar>
-        //   ) : null
-        // }
+        avatar={
+          actor.actorFavourite ? (
+            <Avatar sx={{ backgroundColor: 'red' }}>
+              <FavoriteIcon />
+            </Avatar>
+          ) : null
+        }
         title={
           <Typography variant="h5" component="p">
             {actor.name}{" "}
@@ -65,8 +64,7 @@ export default function ActorCard({ actor, action }) {
           <Grid item xs={14}>
             <Typography variant="h6" component="p">
               <MovieIcon fontSize="small" />
-              {"Seen in \n'"}{actor.known_for[0].title ? actor.known_for[0].title : actor.known_for[0].name}
-              {"'"}
+                {"Seen in \n'"}{actor.known_for[0].title ? actor.known_for[0].title : actor.known_for[0].name}{"'"}
             </Typography>
           </Grid>
           <Grid item xs={14}>

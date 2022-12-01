@@ -22,12 +22,10 @@ const ActorsPage = (props) => {
   const actors = data.results;
 
   // Redundant, but necessary to avoid app crashing.
-//   const watchList = movies.filter(m => m.watch)
-//   localStorage.setItem('watchList', JSON.stringify(watchList))
-//   const addToWatchList = (movieId) => true 
   const actorFavourites = actors.filter(m => m.actorFavourite)
   localStorage.setItem('actorFavourites', JSON.stringify(actorFavourites))
   const addToActorFavourites = (actorId) => true 
+
 
   return (
     <ActorListPageTemplate
