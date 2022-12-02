@@ -27,7 +27,7 @@ const FavouriteActorsPage = () => {
   }
 
   const actors = favouriteActorQueries.map((q) => {
-    q.data = q.data.results
+    q.actorFavourite = q.actorFavourite.map(g => g.id)
     return q.data
   });
 
