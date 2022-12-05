@@ -204,10 +204,27 @@ export const getTvImages = ({ queryKey }) => {
  });
 };
 
+export const getTvReviews = (id) => {
+  return fetch(
+    `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      // console.log(json.results);
+      return json.results;
+    });
+};
 
-
-
-
+export const getReview = (id) => {
+  return fetch(
+    `https://api.themoviedb.org/3/review/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      // console.log(json.results);
+      return json.results;
+    });
+};
 
 
 

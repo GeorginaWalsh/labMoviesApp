@@ -11,7 +11,7 @@ import LiveTvIcon from '@mui/icons-material/LiveTv';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 
 import Drawer from "@mui/material/Drawer";
-//import MovieReviews from "../movieReviews"
+import TvReviews from "../movieReviews/tv";
 
 
 const root = {
@@ -89,7 +89,7 @@ const TvDetails = ({ tv }) => {  // Don't miss this!
         Reviews
       </Fab>
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        {/* <MovieReviews movie={movie} /> */}
+        <TvReviews tv={tv} />
       </Drawer>
     </>
   );
