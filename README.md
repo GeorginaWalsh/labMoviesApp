@@ -1,47 +1,67 @@
-## Name
-IMDB Movie, Actor and TV Series App
+# Web App Dev 2 - Assignment 1 - ReactJS app.
 
-## Description
-This app allows the user to view and interact with various content from the IMDB website, through an API link.
+Name: Georgina Walsh.
 
-With this app you can:
--View new movies,filter movies by genre, and add them to a favourites list, where you can either remove the movie from this list, or submit a review for the movie. Clicking on the "More info" button of the movie's card will bring you to a new page containing some of the movie's details. Here you can also view the movie's reviews.
--View upcoming movies, filter them by genre, and add them to a "to-watch" list, where you can either remove the movie from this list, or submit a review for the movie. Clicking on the "More info" button of the movie's card will bring you to a new page containing some of the movie's details. Here you can also view the movie's reviews. 
--View popular actors, and add them to a favourites list. Clicking on the "More info" button of the actor's card will bring you to a new page containing some of the actor's details.
+## Overview.
 
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### New Pages.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
++ List of Popular Actors.
++ Actor Details.
++ Favourite Actors.
++ List of Top Rated Tv Series.
++ Tv Series details.
++ Favourite Tv Series.
++ Tv Series Reviews.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### New Features.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
++ View popular actors. 
++ Add actors to a favourites list. Clicking on the "More info" button of the actor's card will bring you to a new page containing some of the actor's details.
++ View Top Rated Tv Series. 
++ Add tv seiries to a favourites list. Clicking on the "More info" button of the show's card will bring you to a new page containing some of the show's details.
++ Tv Details also has a "reviews" button, where you can see some reviews IMDB user's made about the show. There is a link for each review which brings you to a new page so you may read the entire review.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+## Setup requirements.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## TMDB endpoints.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
++ /movies/actors - A list of popular actors.
++ /movies/actors/favourites - A personalised list of actors the user favourited.
++ /movies/tvs - A list of top rated tv series.
++ /movies/tvs/favourites - A personalised list of tv series the user favourited. 
++ /actors/{actor_id) - The datails of an actor.
++ /tvs/{tv_id} - The datails of a tv series.
++ /tvs/reviews/{tv_review_id} - Provides the entire review a IMDB user made.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## App Design.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Component catalogue.
 
-## License
-For open source projects, say how it is licensed.
+### UI Design.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+![ ](./images/actorList)
 
+>Shows a list of popular actors.
+
+![ ](./images/actorFavourite.png)
+
+>Shows a list of favourited actors.
+
+![ ](./images/tvList.png)
+
+>Shows a list of top rated tv shows.
+
+### Routing.
+
++ /movies/actors - displays a list of popular actors.
++ /movies/actors/favourites - shows the actors the actors the user favourited.
++ /movies/tvs - displays a list of top rated tv series.
++ /movies/tvs/favourites - shows the tv series the user favourited. 
++ /actors/{actor_id) - displays an actor's details.
++ /tvs/{tv_id} - displays a tv series' details.
++ /tvs/reviews/{tv_review_id} - shows an IMDB user review.
+
+## Independent learning (If relevant).
