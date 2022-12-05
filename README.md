@@ -23,7 +23,7 @@ Name: Georgina Walsh.
 + Tv Details also has a "reviews" button, where you can see some reviews IMDB user's made about the show. There is a link for each review which brings you to a new page so you may read the entire review.
 
 ## Setup requirements.
-
+-----
 
 ## TMDB endpoints.
 
@@ -39,6 +39,7 @@ Name: Georgina Walsh.
 ## App Design.
 
 ### Component catalogue.
+-----
 
 ### UI Design.
 
@@ -50,9 +51,27 @@ Name: Georgina Walsh.
 
 >Shows a list of favourited actors.
 
+![ ](./images/actorDetails.png)
+
+>Provides information about a selected actor.
+
 ![ ](./images/tvList.png)
 
 >Shows a list of top rated tv shows.
+
+![ ](./images/tvFavourite.png)
+
+>Shows a list of favourited tv shows.
+
+![ ](./images/tvDetails.png)
+
+>Provides information about a selected tv show.
+
+![ ](./images/tvReview.png)
+
+>Provides the entire selected review for a tv series.
+
+
 
 ### Routing.
 
@@ -65,3 +84,4 @@ Name: Georgina Walsh.
 + /tvs/reviews/{tv_review_id} - shows an IMDB user review.
 
 ## Independent learning (If relevant).
+-------
