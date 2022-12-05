@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography";
 import CribIcon from '@mui/icons-material/Crib';
 import WorkIcon from '@mui/icons-material/Work';
 
-import Drawer from "@mui/material/Drawer";
-// import ActorCredits from "../movieReviews/actor"
+//import Drawer from "@mui/material/Drawer";
+//import ActorCredits from "../movieReviews/actorCredits";
 
 
 const root = {
@@ -24,6 +24,8 @@ const chip = { margin: 0.5 };
 
 const ActorDetails = ({ actor }) => {  
   const [drawerOpen, setDrawerOpen] = useState(false);
+  let born = actor.place_of_birth ? actor.place_of_birth : "Not Registered"
+  let bio = actor.biography ? actor.biography : "No Registered Biography"
 
   return (
     <>
@@ -32,7 +34,7 @@ const ActorDetails = ({ actor }) => {
       </Typography>
 
       <Typography variant="h6" component="p">
-        {actor.biography}
+        {bio}
       </Typography>
 
       <Paper 
@@ -49,7 +51,7 @@ const ActorDetails = ({ actor }) => {
         ))}
       </Paper>
       <Paper component="ul" sx={root}>
-        <Chip icon={<CribIcon />} label={`${actor.place_of_birth}`} />
+        <Chip icon={<CribIcon />} label={`Born in: ${born}`} />
         <Chip
           icon={<WorkIcon />}
           label={`${actor.known_for_department}`}
@@ -73,7 +75,7 @@ const ActorDetails = ({ actor }) => {
           </li>
         ))}
       </Paper> */}
-      <Fab
+      {/* <Fab
         color="secondary"
         variant="extended"
         onClick={() =>setDrawerOpen(true)}
@@ -87,8 +89,8 @@ const ActorDetails = ({ actor }) => {
         Credits
       </Fab>
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        {/* <ActorCredits actor={actor} /> */}
-      </Drawer>
+        <ActorCredits actor={actor} />
+      </Drawer> */}
     </>
   );
 };

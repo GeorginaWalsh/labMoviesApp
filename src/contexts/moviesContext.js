@@ -8,6 +8,7 @@ const MoviesContextProvider = (props) => {
   const [watchList, setWatchList] = useState( [] )
 
   const [actorFavourites, setActorFavourites] = useState( [] )
+  const [tvFavourites, setTvFavourites] = useState( [] )
 
   const addToFavourites = (movie) => {
     let newFavourites = [...favourites];
@@ -25,6 +26,15 @@ const MoviesContextProvider = (props) => {
     setActorFavourites(newFavourites);
   };
 
+  const addToTvFavourites = (tv) => {
+    let newFavourites = [...tvFavourites];
+    if (!tvFavourites.includes(tv.id)) {
+      newFavourites.push(tv.id);
+    }
+    setTvFavourites(newFavourites);
+  };
+
+/////////////
 
   const removeFromFavourites = (movie) => {
     setFavourites( favourites.filter(
@@ -35,6 +45,12 @@ const MoviesContextProvider = (props) => {
   const removeFromActorFavourites = (actor) => {
     setActorFavourites( actorFavourites.filter(
       (mId) => mId !== actor.id
+    ) )
+  };
+
+  const removeFromTvFavourites = (tv) => {
+    setTvFavourites( tvFavourites.filter(
+      (mId) => mId !== tv.id
     ) )
   };
 
@@ -63,10 +79,13 @@ const MoviesContextProvider = (props) => {
         favourites,
         watchList,
         actorFavourites,
+        tvFavourites,
         addToFavourites,
         addToActorFavourites,
+        addToTvFavourites,
         removeFromFavourites,
         removeFromActorFavourites,
+        removeFromTvFavourites,
         addReview,
         addToWatchList,
         removeFromWatchList,

@@ -23,29 +23,29 @@ import { MoviesContext } from "../../contexts/moviesContext";
 
 
 export default function TvCard({ tv, action }) {
-//   const { favourites, addToFavourites } = useContext(MoviesContext);
+  const { tvFavourites, addToTvFavourites } = useContext(MoviesContext);
  
-//    if (favourites.find((id) => id === movie.id)) {
-//      movie.favourite = true;
-//    } else {
-//      movie.favourite = false
-//    }
+   if (tvFavourites.find((id) => id === tv.id)) {
+     tv.tvFavourite = true;
+   } else {
+     tv.tvFavourite = false
+   }
  
-//    const handleAddToFavourite = (e) => {
-//      e.preventDefault();
-//      addToFavourites(movie);
-//    };
+   const handleAddToTvFavourite = (e) => {
+     e.preventDefault();
+     addToTvFavourites(tv);
+   };
 
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        // avatar={
-        //   movie.favourite ? (
-        //     <Avatar sx={{ backgroundColor: 'red' }}>
-        //       <FavoriteIcon />
-        //     </Avatar>
-        //   ) : null
-        // }
+        avatar={
+          tv.tvFavourite ? (
+            <Avatar sx={{ backgroundColor: 'red' }}>
+              <FavoriteIcon />
+            </Avatar>
+          ) : null
+        }
         title={
           <Typography variant="h5" component="p">
             {tv.name}{" "}

@@ -26,8 +26,13 @@ const FavouriteActorsPage = () => {
     return <Spinner />;
   }
 
-  const actors = favouriteActorQueries.map((q) => {
-    q.actorFavourite = q.actorFavourite.map(g => g.id)
+  // const actors = favouriteActorQueries.map((q) => {
+  //   q.actorFavourite = q.actorFavourite.map(g => g.id)
+  //   return q.data
+  // });
+
+    const actors = favouriteActorQueries.map((q) => {
+    // q.data.actorFavourite = q.data.actorFavourite.map(g => g.id)
     return q.data
   });
 

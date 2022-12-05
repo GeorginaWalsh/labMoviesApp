@@ -63,8 +63,8 @@ export default function ActorCard({ actor, action }) {
         <Grid container>
           <Grid item xs={14}>
             <Typography variant="h6" component="p">
-              <MovieIcon fontSize="small" />
-                {"Seen in \n'"}{actor.known_for[0].title ? actor.known_for[0].title : actor.known_for[0].name}{"'"}
+              <MovieIcon fontSize="large" />
+              
             </Typography>
           </Grid>
           <Grid item xs={14}>

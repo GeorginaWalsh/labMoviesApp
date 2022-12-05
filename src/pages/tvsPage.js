@@ -5,7 +5,7 @@ import Spinner from '../components/spinner';
 
 import TvListPageTemplate from "../components/templateMovieListPage/tv";
 
-import AddToActorFavouritesIcon from "../components/cardIcons/addToActorFavourites";
+import AddToTvFavouritesIcon from "../components/cardIcons/addToTvFavourites";
 
 const TvsPage = (props) => {
 
@@ -20,10 +20,9 @@ const TvsPage = (props) => {
   }  
   const tvs = data.results;
 
-  // Redundant, but necessary to avoid app crashing.
-//   const actorFavourites = actors.filter(m => m.actorFavourite)
-//   localStorage.setItem('actorFavourites', JSON.stringify(actorFavourites))
-//   const addToActorFavourites = (actorId) => true 
+  const tvFavourites = tvs.filter(m => m.tvFavourite)
+  localStorage.setItem('tvFavourites', JSON.stringify(tvFavourites))
+  const addToTvFavourites = (tvId) => true 
 
 
   return (
@@ -31,7 +30,7 @@ const TvsPage = (props) => {
       title="Discover TV Series"
       tvs={tvs}
       action={(tv) => {
-        return <AddToActorFavouritesIcon tv={tv} />
+        return <AddToTvFavouritesIcon tv={tv} />
       }}
     />
 );
