@@ -43,7 +43,7 @@ Name: Georgina Walsh.
 
 ### UI Design.
 
-![ ](./images/actorList)
+![ ](./images/actorList.png)
 
 >Shows a list of popular actors.
 
